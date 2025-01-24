@@ -11,13 +11,13 @@ import { ActivatedRoute } from '@angular/router';
 export class HomeComponent implements OnInit {
   constructor(
     private foodService: FoodService,
-    private activatedRoute: ActivatedRoute
+    private route: ActivatedRoute
   ) {}
   foods: Food[] = [];
   value!: number;
 
   ngOnInit() {
-    this.activatedRoute.params.subscribe((params) => {
+    this.route.params.subscribe((params) => {
       if (params['searchTerm']) {
         this.foods = this.foodService.getAll().filter((food) => {
           return food.name
@@ -28,7 +28,6 @@ export class HomeComponent implements OnInit {
         this.foods = this.foodService.getAll();
       }
     });
-    console.log(this.foods);
   }
 
   getFullStars(stars: number): number[] {

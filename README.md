@@ -18,7 +18,7 @@ _Home Page_
 ![Filtered View](src/assets/2.png)  
 _Filtered View_
 
-![Input Search Page](src/assets/3.png)  
+![Input Search Page](src/assets/3-new.png)  
 _Input Search Page_
 
 ![Product Detail Page](src/assets/4.png)  
@@ -27,10 +27,10 @@ _Product Detail Page_
 ![Shopping Cart Page](src/assets/5.png)  
 _Shopping Cart Page_
 
-![Not Found - Product](src/assets/6.png)  
+![Not Found - Product](src/assets/6-new.png)  
 _Not Found (Invalid Product ID)_
 
-![Not Found - Search](src/assets/7.png)  
+![Not Found - Search](src/assets/7-new.png)  
 _Not Found (Search)_
 
 ---

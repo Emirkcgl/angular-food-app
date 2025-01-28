@@ -1,0 +1,42 @@
+<div class="container">
+  <img [src]="food.imageUrl" [alt]="food.name" />
+  <div class="details">
+    <div class="header">
+      <span class="name">
+        {{ food.name }}
+      </span>
+      <span class="favorite  {{ food.favorite ? '' : 'not' }}"> ❤ </span>
+    </div>
+    <div class="rating">
+      <!-- Tam yıldızlar -->
+      <ng-container *ngFor="let _ of getFullStars(food.stars)">
+        <i class="fa fa-star"></i>
+      </ng-container>
+
+      <!-- Yarım yıldız -->
+      <i class="fa fa-star-half" *ngIf="hasHalfStar(food.stars)"></i>
+
+      <!-- Boş yıldızlar -->
+      <ng-container *ngFor="let _ of getEmptyStars(food.stars)">
+        <i class="fa fa-star-o"></i>
+      </ng-container>
+    </div>
+    <div class="origins">
+      <span *ngFor="let origin of food.origins">
+        {{ origin }}
+      </span>
+    </div>
+    <div class="tags">
+      <app-tags [foodPageTags]="food.tags"></app-tags>
+    </div>
+    <div class="cook-time">
+      <span>
+        Time to cook about <strong>{{ food.cookTime }}</strong> minutes
+      </span>
+    </div>
+    <div class="price">
+      <span>{{ food.price | currency }}</span>
+    </div>
+    <button>Add To Cart</button>
+  </div>
+</div>

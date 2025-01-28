@@ -18,15 +18,11 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {
     this.route.params.subscribe((params) => {
-      console.log('Params:', params); // Gelen parametreleri kontrol edin
       if (params['searchTerm']) {
-        this.foods = this.foodService.getAll().filter((food) => {
-          return food.name
-            .toLowerCase()
-            .includes(params['searchTerm'].toLowerCase());
-        });
+        this.foods = this.foodService.getAllFoodsBySearchTerm(
+          params['searchTerm']
+        );
       } else if (params['tag']) {
-        console.log('Tag param:', params['tag']); // Gelen tag parametresini kontrol edin
         this.foods = this.foodService.getAllFoodsByTag(params['tag']);
       } else {
         this.foods = this.foodService.getAll();
